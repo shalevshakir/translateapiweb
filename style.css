@@ -1,0 +1,63 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #8B4513; /* Brown background */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Input fields */
+input {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 200px;
+}
+
+/* Button */
+button {
+    padding: 10px 20px;
+    background-color: white; /* White button */
+    color: black; /* Black text */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #f4f4f4; /* Light hover effect */
+}
+
+/* Display div */
+#display {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 400px;
+    text-align: center;
+    font-size: 18px;
+    min-height: 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for mobile */
+@media screen and (max-width: 600px) {
+    input {
+        width: 100%;
+    }
+    
+    #display {
+        width: 100%;
+    }
+}

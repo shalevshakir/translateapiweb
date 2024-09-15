@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+    translate<input id="mytext">
+    to<input id="language">
+
+from <input id="fromlang">
+<button onclick="tr()">translate</button> 
+<div id="display"></div>
+    <script>
+     const tr=()=>{  
+     const data = JSON.stringify({
+	text: mytext.value,
+	to: language.value,
+	from_lang: fromlang.value
+});
+
+const xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener('readystatechange', function () {
+	if (this.readyState === this.DONE) {
+       res= JSON.parse(this.responseText)
+		display.innerHTML=res[0].translated;
+        // display.innerHTML=this.responseText;
+	}
+});
+
+xhr.open('POST', 'https://google-api31.p.rapidapi.com/translate');
+xhr.setRequestHeader('x-rapidapi-key', 'fadb5aa295msh0445874921139d8p13103ajsnbe33006d0e0b');
+xhr.setRequestHeader('x-rapidapi-host', 'google-api31.p.rapidapi.com');
+xhr.setRequestHeader('Content-Type', 'application/json');
+
+xhr.send(data);
+
+} 
+    </script>
+</body>
+</html>
